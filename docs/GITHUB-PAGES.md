@@ -1,6 +1,6 @@
 # 上传并发布到 GitHub Pages
 
-本网站是纯静态网站，上传即可使用。下面的 `YOUR_USERNAME` 指你的 **GitHub 用户名**，不是昵称或邮箱。目前尚未替你创建远程仓库或上传文件。
+本网站是纯静态网站，上传即可使用。当前账号为 `Lthinker`，仓库为 `zihanli.github.io`，公开地址为 https://lthinker.github.io/zihanli.github.io/ 。本地目录已连接此仓库，日常更新使用 [Git 同步流程](LOCAL-SYNC.md)，无需重复网页上传。以下通用建站说明中的 `YOUR_USERNAME` 指 GitHub 用户名，不是昵称或邮箱。
 
 ## 方法一：网页上传，不用命令行
 

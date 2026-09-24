@@ -1,5 +1,7 @@
 # Zihan Li — Academic Homepage
 
+公开主页：[lthinker.github.io/zihanli.github.io](https://lthinker.github.io/zihanli.github.io/)。本地目录已关联 `Lthinker/zihanli.github.io` 仓库的 `main` 分支。日常维护请看 [本地同步说明](docs/LOCAL-SYNC.md)。
+
 基于 [academic-homepage-openreview](https://github.com/Arktis2022/academic-homepage-openreview) 定制的学术个人主页。保留原模板的 OpenReview 风格，无需 npm、构建工具或服务器后端，可直接部署到 GitHub Pages。
 
 ## 预览
