@@ -1,0 +1,3 @@
+<div class="education-row"><span class="education-date">2022 — 2027<br><small>Expected August 2027</small></span><div><h3>PhD in Biomedical Engineering</h3><p>Tsinghua University · School of Biomedical Engineering</p><p class="muted">Advisors: Hongen Liao, Qiyuan Tian, and Liangyi Chen</p></div></div>
+<div class="education-row"><span class="education-date">2018 — 2022</span><div><h3>Bachelor of Engineering</h3><p>Tsinghua University · School of Biomedical Engineering</p></div></div>
+<div class="education-row"><span class="education-date">2019 — 2022</span><div><h3>Minor in Data Science and Technology</h3><p>Tsinghua University · School of Software</p></div></div>

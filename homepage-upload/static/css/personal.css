@@ -1,0 +1,43 @@
+/* Personal adjustments matching the reference site's compact profile. */
+html { scroll-padding-top: 60px; }
+.hero { padding: 26px 0 10px; }
+.hero-title-en { font-size: 2.25rem; }
+.hero-eyebrow { margin-bottom: 16px; }
+.lead .hero-lede { max-width: none; line-height: 1.6; text-align: justify; }
+.hero-links { clear: both; margin: 12px 0 0; }
+.metrics { gap: 6px 30px; }
+.metric { white-space: nowrap; }
+.education-row { display: grid; grid-template-columns: 150px 1fr; gap: 24px; border-top: 1px solid var(--or-line-lt); padding: 12px 8px; }
+.education-row:nth-child(odd) { background: var(--or-panel); }
+.education-date { color: var(--or-gray); font-size: 13px; }
+.education-date small { font-size: 11px; }
+.education-row h3 { margin: 0 0 5px; font-size: 14px; color: var(--or-slate); }
+.education-row p { margin: 3px 0; }
+.muted { color: var(--or-gray); font-size: 13px; }
+.award-row { grid-template-columns: 110px 1fr auto; }
+.main-body, .pub-title-line, .pub-authors { overflow-wrap: anywhere; }
+.topnav-link:visited { color: white; }
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; padding: 12px; background: white; }
+.skip-link:focus { top: 10px; }
+:focus-visible { outline: 2px solid var(--or-teal); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .topbar-inner { gap: 0; }
+  .topbar-actions { margin-left: auto; order: 1; }
+  .topnav { display: none; order: 2; margin-top: 12px; }
+  .topnav.open { display: flex; }
+  .icon-btn { display: grid; gap: 5px; border: 1px solid #ffffff80; padding: 10px; background: transparent; cursor: pointer; }
+  .icon-btn span { display: block; background: white; width: 18px; height: 2px; }
+  .lead .hero-lede { text-align: left; }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; padding: 4px 0; }
+  .metric { white-space: normal; }
+  .metric-num { display: block; }
+  .metric-cap { display: block; margin-left: 0; }
+  .education-row { grid-template-columns: 1fr; gap: 8px; }
+  .award-row { grid-template-columns: 85px 1fr; }
+  .scrollbox { padding: 4px 10px; }
+}
+@media print {
+  .topbar, .fab, .filters, .scrollbox-note, .skip-link { display: none; }
+  .scrollbox { max-height: none; overflow: visible; border: 0; }
+  .pub-row { break-inside: avoid; }
+}

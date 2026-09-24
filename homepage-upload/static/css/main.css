@@ -1,0 +1,1045 @@
+/* ==========================================================================
+   Academic homepage — "OpenReview" skin
+   https://github.com/Arktis2022/academic-homepage-openreview
+
+   Mimics openreview.net's visual system, verified against their live CSS
+   bundles (2026-07):
+     brand crimson #8c1b13 (navbar, section headings, stat numbers)
+     teal links #3e6775 → hover #3f6978
+     slate text #2c3a4a, gray #616161, cream ground #fffdfa,
+     panel #f7f6f4, borders #ddd/#eee, Noto Sans @ 14px,
+     buttons: 2px teal border, zero radius, h1 text-shadow 0 1px 0 #fff.
+
+   To recolour the site, change the tokens in :root below — see
+   docs/CUSTOMIZING.md.
+   ========================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+    --or-red: #8c1b13;
+    --or-red-dark: #7d1803;
+    --or-teal: #3e6775;
+    --or-teal-dark: #3f6978;
+    --or-slate: #2c3a4a;
+    --or-gray: #616161;
+    --or-gray-2: #757575;
+    --or-ground: #fffdfa;
+    --or-panel: #f7f6f4;
+    --or-line: #ddd;
+    --or-line-lt: #eee;
+
+    --font-sans: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: "Courier New", Courier, monospace;
+
+    /* Page width and the height of the internally-scrolling panels. */
+    --wrap: 1010px;
+    --scroll-h: 560px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--or-ground);
+    color: #333;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Links: OpenReview teal, underline on hover only (bootstrap behavior) */
+a {
+    color: var(--or-teal);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--or-teal);
+}
+
+a:hover {
+    color: var(--or-teal-dark);
+    text-decoration: underline;
+}
+
+.wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+kbd {
+    font-family: inherit;
+    font-size: 0.85em;
+    font-weight: 400;
+    padding: 0 3px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: none;
+    color: inherit;
+    border-radius: 2px;
+}
+
+/* Hooks inherited from the base skeleton that this skin does not use. */
+.ambient,
+.status-dot,
+.portrait-glow,
+.brand-mark,
+.nameplate-rule {
+    display: none !important;
+}
+
+/* ---------- Top bar: the OpenReview crimson navbar ---------- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--or-red);
+    border-bottom: none;
+}
+
+.topbar-inner {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.brand-name {
+    font-size: 18px;
+    color: #fff;
+}
+
+.brand-name a,
+.brand a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand:hover .brand-name {
+    color: #fff;
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
+    margin-left: auto;
+}
+
+.topnav-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+.topnav-link:hover {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.topnav-link.active {
+    color: #fff;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CV button removed from the navbar (lives in hero links) */
+.btn-cv {
+    display: none;
+}
+
+.icon-btn {
+    display: none;
+}
+
+/* ---------- Header / profile intro ---------- */
+.hero {
+    padding: 26px 0 10px;
+}
+
+.hero-title {
+    margin: 0.5rem 0 0.25rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1.1;
+    /* OpenReview h1: bold + subtle white emboss */
+    text-shadow: 0 1px 0 #fff;
+}
+
+.hero-title-en {
+    font-size: 2.25rem;
+    color: var(--or-slate);
+}
+
+.hero-title-zh {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--or-gray);
+    margin-left: 8px;
+    text-shadow: none;
+}
+
+/* eyebrow ≈ the profile-title line under a name (plain gray, not uppercase) */
+.hero-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--or-gray);
+    margin-bottom: 16px;
+}
+
+.front-grid {
+    display: block;
+}
+
+.front-side {
+    display: block;
+}
+
+/* Portrait: plain bordered photo, floated right */
+.portrait {
+    float: right;
+    width: 150px;
+    margin: 4px 0 12px 2em;
+}
+
+.portrait img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--or-line);
+    display: block;
+}
+
+.portrait-cap {
+    font-size: 0.75rem;
+    color: var(--or-gray);
+    margin-top: 3px;
+    line-height: 1.35;
+}
+
+.lead .hero-lede {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.lead .hero-lede p {
+    margin: 0 0 10px;
+}
+
+.lead .hero-lede strong {
+    color: var(--or-slate);
+}
+
+/* Hero links ≈ profile "Personal Links": plain teal links in a row */
+.hero-links {
+    clear: none;
+    margin: 12px 0 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--or-line-lt);
+    border-bottom: 1px solid var(--or-line-lt);
+    font-size: 0.875rem;
+}
+
+.hero-links a {
+    color: var(--or-teal);
+    margin-right: 4px;
+}
+
+.hero-links a .ico {
+    display: none;
+}
+
+.hero-links a::after {
+    content: " ·";
+    color: #ccc;
+    text-decoration: none;
+}
+
+.hero-links a:last-child::after {
+    content: "";
+}
+
+/* ---------- Metrics: OpenReview stats page (big crimson numbers) ---------- */
+.metrics {
+    margin: 14px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+}
+
+.metric {
+    padding: 0;
+}
+
+.metric-num {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--or-red);
+}
+
+.metric-num .plus {
+    color: var(--or-red);
+}
+
+.metric-cap {
+    display: inline;
+    margin-left: 6px;
+    font-size: 0.75rem;
+    color: var(--or-gray);
+}
+
+/* ---------- Sections ---------- */
+.section {
+    padding: 26px 0;
+    border-top: 1px solid var(--or-line-lt);
+    scroll-margin-top: 58px;
+}
+
+.section-head {
+    margin-bottom: 12px;
+}
+
+.section-kicker {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+/* Section heading = OpenReview's signature small bold crimson h4 */
+.section-h {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    color: var(--or-red);
+}
+
+.section-sub {
+    font-family: var(--font-sans);
+    margin: 4px 0 0;
+    color: var(--or-gray);
+    font-size: 0.875rem;
+    font-style: normal;
+    max-width: 80ch;
+}
+
+/* ---------- Internal-scroll panel ---------- */
+.scrollbox {
+    max-height: var(--scroll-h);
+    overflow-y: auto;
+    border: 1px solid var(--or-line);
+    background: var(--or-ground);
+    padding: 4px 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc var(--or-panel);
+}
+
+.scrollbox::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+    background: var(--or-panel);
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border: 2px solid var(--or-panel);
+}
+
+.scrollbox-note {
+    font-size: 0.75rem;
+    color: var(--or-gray-2);
+    margin: 6px 0 0;
+    text-align: right;
+}
+
+/* ---------- Filters: bootstrap-tab-flavored chips ---------- */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    margin-bottom: 12px;
+}
+
+.filter-chip {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    padding: 3px 12px;
+    color: var(--or-teal);
+    background: var(--or-ground);
+    border: 1px solid var(--or-line);
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.filter-chip:hover {
+    background: var(--or-panel);
+}
+
+.filter-chip.active {
+    color: #fff;
+    background: var(--or-teal);
+    border-color: var(--or-teal-dark);
+    font-weight: 700;
+}
+
+.filter-chip .cnt {
+    font-size: 0.75rem;
+    color: inherit;
+    opacity: 0.75;
+    margin-left: 4px;
+}
+
+/* ---------- Publications: OpenReview note cards ---------- */
+.pubs {
+    display: block;
+}
+
+.pub-group-title {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--or-slate);
+    margin: 16px 0 4px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--or-line);
+    position: sticky;
+    top: 0;
+    background: var(--or-ground);
+    z-index: 2;
+}
+
+.pub-group-title:first-child {
+    margin-top: 4px;
+}
+
+.pub-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--or-line-lt);
+}
+
+.pub-row.hidden {
+    display: none;
+}
+
+/* year column folded into the meta line, OpenReview-style */
+.pub-meta {
+    display: none;
+}
+
+.pub-body {
+    min-width: 0;
+    max-width: none;
+}
+
+/* line 1 — title: teal, bold, link-like (OpenReview note h4) */
+.pub-title-line {
+    font-family: var(--font-sans);
+    color: var(--or-teal);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-align: left;
+    hyphens: none;
+}
+
+/* line 2 — authors: italic slate */
+.pub-authors {
+    font-family: var(--font-sans);
+    font-style: italic;
+    color: var(--or-slate);
+    font-size: 0.875rem;
+    line-height: 1.3;
+    margin-top: 2px;
+    text-align: left;
+    hyphens: none;
+}
+
+.pub-authors strong {
+    font-weight: 700;
+}
+
+.author-me {
+    color: var(--or-slate);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* line 3 — meta: small gray (venue, year, honors, links) */
+.pub-venue-line {
+    font-family: var(--font-sans);
+    margin-top: 2px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: var(--or-gray);
+}
+
+.pub-venue {
+    font-style: normal;
+    color: var(--or-gray);
+}
+
+.pub-vyear {
+    color: var(--or-gray);
+}
+
+/* line 4 — honors + links row (quiet, like OpenReview's note meta) */
+.pub-extra {
+    font-family: var(--font-sans);
+    margin-top: 2px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: var(--or-gray);
+}
+
+/* honors: quiet crimson text, no box */
+.pill-honor {
+    background: none;
+    color: var(--or-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: none;
+    padding: 0;
+    margin-right: 10px;
+    white-space: normal;
+}
+
+.pill-honor::before {
+    content: "";
+}
+
+.pub-links {
+    display: inline;
+    margin-left: 0;
+}
+
+.lnk {
+    display: inline;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--or-teal);
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.lnk::before {
+    content: "";
+}
+
+.lnk::after {
+    content: "";
+}
+
+.lnk:hover {
+    color: var(--or-teal-dark);
+    text-decoration: underline;
+}
+
+.lnk.is-open {
+    font-weight: 700;
+}
+
+/* BibTeX box: code panel */
+.bib-box {
+    margin-top: 6px;
+    padding: 10px 12px;
+    background: var(--or-panel);
+    border: 1px solid var(--or-line-lt);
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #333;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.pub-expand {
+    display: none;
+}
+
+/* ---------- Feed (news / activities) ---------- */
+.feed {
+    display: block;
+}
+
+.feed-item {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--or-line-lt);
+}
+
+.feed-date {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--or-gray);
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.feed-body {
+    font-family: var(--font-sans);
+    color: #333;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: none;
+    text-align: left;
+    hyphens: none;
+}
+
+.feed-body a {
+    color: var(--or-teal);
+}
+
+.feed-body strong {
+    color: var(--or-slate);
+}
+
+.feed-item.starred .feed-date::before {
+    content: "";
+}
+
+.feed-item.starred .feed-date {
+    color: var(--or-red);
+    font-weight: 700;
+}
+
+.feed-more {
+    display: none;
+}
+
+/* ---------- Awards ---------- */
+.award-list ul,
+.talk-list ul,
+.plain-list ul,
+.book-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.award-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding: 5px 8px;
+}
+
+/* zebra: OpenReview forum's alternating note grounds */
+.award-row:nth-child(odd),
+.talk-row:nth-child(odd),
+.plain-row:nth-child(odd) {
+    background: var(--or-panel);
+}
+
+.award-year {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--or-gray);
+}
+
+.award-title {
+    font-family: var(--font-sans);
+    color: #333;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    text-align: left;
+    hyphens: none;
+}
+
+.award-title strong {
+    color: var(--or-slate);
+    font-weight: 700;
+}
+
+.award-sub {
+    display: block;
+    color: var(--or-gray);
+    font-size: 0.75rem;
+    font-style: italic;
+    margin-top: 1px;
+}
+
+.award-cert {
+    font-size: 0.75rem;
+    color: var(--or-teal);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.award-cert:hover {
+    text-decoration: underline;
+}
+
+.award-cert::before {
+    content: "";
+}
+
+.award-cert::after {
+    content: "";
+}
+
+/* ---------- Talks / funding ---------- */
+.talk-row,
+.plain-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding: 5px 8px;
+}
+
+.talk-row .yr,
+.plain-row .yr {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--or-gray);
+}
+
+.talk-row .ttl,
+.plain-row .ttl {
+    font-family: var(--font-sans);
+    color: #333;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    text-align: left;
+    hyphens: none;
+}
+
+.talk-row .ttl strong,
+.plain-row .ttl strong {
+    font-weight: 700;
+    color: var(--or-slate);
+}
+
+.talk-row a.slides {
+    font-size: 0.75rem;
+    color: var(--or-teal);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.talk-row a.slides:hover {
+    text-decoration: underline;
+}
+
+.talk-row a.slides::before {
+    content: "";
+}
+
+.talk-row a.slides::after {
+    content: "";
+}
+
+/* ---------- Service ---------- */
+.service-body {
+    display: block;
+}
+
+.svc-card {
+    background: none;
+    border: none;
+    border-top: 1px solid var(--or-line-lt);
+    border-radius: 0;
+    padding: 10px 0;
+}
+
+.svc-card:first-child {
+    border-top: none;
+}
+
+.svc-card h5 {
+    margin: 0 0 6px;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--or-red);
+}
+
+.svc-card ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.svc-card li {
+    font-family: var(--font-sans);
+    color: #333;
+    font-size: 0.875rem;
+    padding: 2px 0;
+    text-align: left;
+    hyphens: none;
+}
+
+.svc-card li strong {
+    color: var(--or-slate);
+    font-weight: 700;
+}
+
+/* ---------- Books: same row recipe as Talks/Funding (zebra, same sizes) ---------- */
+.book-row {
+    display: grid;
+    grid-template-columns: 170px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding: 5px 8px;
+    border-bottom: none;
+}
+
+.book-row:nth-child(odd) {
+    background: var(--or-panel);
+}
+
+.book-row .span {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--or-gray);
+}
+
+.book-row .bk {
+    font-family: var(--font-sans);
+    color: #333;
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+.book-row .bk em {
+    font-style: italic;
+}
+
+.book-row .bk strong {
+    font-weight: 700;
+    color: var(--or-slate);
+}
+
+.book-row a {
+    color: var(--or-teal);
+    font-size: 0.75rem;
+}
+
+/* ---------- People grid ---------- */
+.people-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.people-grid li {
+    background: var(--or-ground);
+    border: 1px solid var(--or-line);
+    border-radius: 0;
+    padding: 10px 12px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--or-gray);
+}
+
+.people-grid li:hover {
+    background: var(--or-panel);
+    border-color: #ccc;
+}
+
+.people-grid li a {
+    color: var(--or-teal);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.people-grid li a:hover {
+    color: var(--or-teal-dark);
+    text-decoration: underline;
+}
+
+.people-grid li strong {
+    font-weight: 700;
+}
+
+/* ---------- Visitor ---------- */
+.visitor-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+/* ---------- Footer: OpenReview's quiet centered footer ---------- */
+.footer {
+    border-top: 1px solid var(--or-line);
+    background: var(--or-ground);
+    padding: 18px 0 40px;
+    margin-top: 16px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.8125rem;
+    color: var(--or-gray-2);
+}
+
+.footer-copy {
+    color: var(--or-gray-2);
+    font-size: 0.8125rem;
+}
+
+.footer-right {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-right a {
+    color: var(--or-teal);
+    font-size: 0.8125rem;
+}
+
+/* ---------- Back to top ---------- */
+.fab {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: 2px solid var(--or-teal-dark);
+    background: var(--or-ground);
+    color: var(--or-teal);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 90;
+}
+
+.fab:hover {
+    background: var(--or-panel);
+}
+
+.fab.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- Reveal disabled ---------- */
+.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+    .wrap {
+        padding: 0 16px;
+    }
+
+    .topbar-inner {
+        padding: 8px 16px;
+    }
+
+    .topnav {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 6px;
+    }
+
+    .portrait {
+        width: 110px;
+        margin-left: 14px;
+    }
+
+    .feed-item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .award-row,
+    .talk-row,
+    .plain-row {
+        grid-template-columns: 42px 1fr;
+    }
+
+    .award-cert,
+    .talk-row a.slides {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 2px;
+    }
+
+    .book-row {
+        grid-template-columns: 1fr;
+        gap: 1px;
+    }
+
+    .people-grid ul {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+}

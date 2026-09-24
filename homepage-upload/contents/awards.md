@@ -1,0 +1,12 @@
+- *2026* **Young Investigator Award — 3rd Place**<br />OCSMRM
+- *2025* **Ant Group Intech Scholarship: Future Scholar**<br />Ant Group
+- *2025* **Magna cum Laude Merit Award**<br />ISMRM · Top 15%
+- *2024, 2025* **Scholarship for Comprehensive Excellent Graduate**<br />Tsinghua University · Top 5%
+- *2024* **Young Investigator Award — 2nd Place**<br />OCSMRM
+- *2022–2025* **Travel Stipend Award**<br />International Society for Magnetic Resonance in Medicine
+- *2023* **4th Place, QuaD22 Challenge**<br />MICCAI
+- *2022* **Future Scholar Scholarship**<br />Tsinghua University · Top 2%
+- *2022* **Outstanding Bachelor Graduate of Beijing**<br />Beijing Municipal Education Commission · Top 5%
+- *2022* **Outstanding Bachelor Graduate**<br />Tsinghua University · Top 10%
+- *2020, 2021* **Scholarship for Comprehensive Excellent Undergraduate**<br />Tsinghua University · Top 5%
+- *2019* **Scholarship for Academic Excellence**<br />Tsinghua University · Top 5%

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Placeholder portrait">
+  <!-- Neutral placeholder portrait. Replace with your own photo and update
+       profile.photo in contents/config.yml. -->
+  <rect width="400" height="500" fill="#e9e6e1"/>
+  <circle cx="200" cy="196" r="76" fill="#c8c2b9"/>
+  <path d="M60 470c0-79 63-143 140-143s140 64 140 143z" fill="#c8c2b9"/>
+  <text x="200" y="452" text-anchor="middle"
+        font-family="'Noto Sans', Helvetica, Arial, sans-serif"
+        font-size="21" letter-spacing="1.5" fill="#8f887e">YOUR PHOTO</text>
+</svg>

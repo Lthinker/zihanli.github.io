@@ -1,0 +1,48 @@
+site:
+  title: "Zihan Li — Biomedical Imaging & AI"
+  description: "Zihan Li, PhD student at Tsinghua University. Research in diffusion MRI, self-supervised learning, and autonomous robotic ultrasound."
+  author: "Zihan Li"
+  copyright: "&copy; 2026 Zihan Li · Updated September 2026"
+
+profile:
+  name: "Zihan Li"
+  name_secondary: ""
+  tagline: "PhD student, Biomedical Engineering, Tsinghua University — Center for Biomedical Imaging Research."
+  photo: ""
+  # Do not add "Li Z": this abbreviation is shared by multiple coauthors.
+  name_aliases:
+    - "Zihan Li"
+
+links:
+  - { label: "Curriculum Vitae", url: "cv.html", icon: cv }
+  - { label: "Google Scholar", url: "https://scholar.google.com/citations?user=HUPJftsAAAAJ&hl=en&sortby=pubdate", icon: scholar }
+  - { label: "Email", url: "mailto:Zihan-li18@outlook.com", icon: mail }
+
+nav:
+  - { id: news, label: "News" }
+  - { id: publications, label: "Publications" }
+  - { id: awards, label: "Awards" }
+  - { id: education, label: "Education" }
+  - { id: service, label: "Service" }
+  - { id: patents, label: "Patents" }
+
+stats:
+  enabled: true
+  items:
+    - { source: journal, label: "journal articles", plus: false }
+    - { source: conference, label: "conference / workshop papers", plus: false }
+    - { source: abstract, label: "conference abstracts", plus: false }
+    - { source: awards, label: "honors & awards", plus: false }
+
+publications:
+  filters: true
+  note: "<strong>#</strong> Equal contribution · <strong>*</strong> Corresponding author. Conference abstracts and manuscripts are listed separately."
+
+footer_links:
+  - { label: "Scholar", url: "https://scholar.google.com/citations?user=HUPJftsAAAAJ" }
+  - { label: "Email", url: "mailto:Zihan-li18@outlook.com" }
+  - { label: "Template", url: "https://github.com/Arktis2022/academic-homepage-openreview" }
+
+visitors:
+  enabled: false
+  script_src: ""

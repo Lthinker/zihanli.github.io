@@ -1,0 +1,2 @@
+- **Method, Apparatus, and Electronic Device for Diffusion Prior Based Microstructure Modeling Optimization.** Tian Q, Li Z, Zheng J, Yang H, Liu M, Liao H. Patent: ZL 2025 1 0595484.7.
+- **Method, Apparatus, and Electronic Device for Microstructure Parameter Estimation in Diffusion Magnetic Resonance Imaging.** Tian Q, Chen Y, Li Z, Zheng J, Yang H, Liu M. Under review.
