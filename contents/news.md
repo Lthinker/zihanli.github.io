@@ -1,5 +1,7 @@
 <!-- Publication dates, not inferred acceptance dates. Add new items at the top. -->
 
+**2026.10.24:** Our paper, [A lightweight portable ultrasound robot for autonomous liver sonography](https://doi.org/10.1038/s41467-026-79007-5), is published online in **Nature Communications**.
+
 **2026.09.09:** Our work on accessible deep learning-based denoising for accelerated brain MRI is available online in [NeuroImage](https://doi.org/10.1016/j.neuroimage.2026.122210).
 
 **2026.08.15:** [MicroKAN](https://doi.org/10.1016/j.neuroimage.2026.122032), our work on diffusion MRI microstructural modeling, appears in NeuroImage, Volume 337. [Code](https://github.com/JustlfC03/MicroKAN)

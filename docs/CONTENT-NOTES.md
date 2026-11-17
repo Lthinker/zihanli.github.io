@@ -1,6 +1,6 @@
 # 内容依据与待补信息
 
-整理日期：2026-09-19。
+初次整理：2026-09-19。最近更新：2026-11-17（Nature Communications 论文）。
 
 ## 来源
 
@@ -11,7 +11,7 @@
 
 ## 论文处理
 
-已展示 7 篇期刊论文、4 篇会议／工作坊论文、16 条会议摘要及 7 项在审／投稿／大修稿件。论文、摘要与在审稿件分别分组。All 按钮显示的是全部展示条目数，不能解读为已发表论文数。首页以独立分类显示 7 篇期刊论文、4 篇会议／工作坊论文、16 条会议摘要和 12 项荣誉记录，均从页面内容计算，不合并成“已发表论文总数”。
+已展示 8 篇期刊论文、4 篇会议／工作坊论文、16 条会议摘要及 7 项在审／投稿／大修稿件。论文、摘要与在审稿件分别分组。All 按钮显示的是全部展示条目数，不能解读为已发表论文数。首页以独立分类显示 8 篇期刊论文、4 篇会议／工作坊论文、16 条会议摘要和 12 项荣誉记录，均从页面内容计算，不合并成“已发表论文总数”。
 
 News 使用已核对的线上发表或期刊卷期日期，不将它们写成录用日期。具体日期为 Self2Self-AM 2026-09-09、MicroKAN 卷期 2026-08-15、Noise2Average 2026-02-18、DIMOND 2024-04-18。未虚构用户的活动或获奖月份。布局参考 https://arktis2022.github.io/，未使用参考站作者的头像、履历或个人动态。
 
@@ -19,6 +19,7 @@ News 使用已核对的线上发表或期刊卷期日期，不将它们写成录
 
 | 论文 | 链接 |
 | --- | --- |
+| A lightweight portable ultrasound robot for autonomous liver sonography | [Nature Communications, 2026](https://www.nature.com/articles/s41467-026-79007-5) |
 | Improving the accessibility… | [NeuroImage, 2026](https://www.sciencedirect.com/science/article/pii/S1053811926005252) |
 | MicroKAN | [NeuroImage, 2026](https://www.sciencedirect.com/science/article/pii/S1053811926003472) |
 | Noise2Average | [正式论文的机构存档](https://ora.ox.ac.uk/objects/uuid%3A2035a9c7-5ede-4228-8007-c597b438d6a6) |
@@ -31,7 +32,7 @@ MicroKAN 的代码入口来自论文页面。没有为无法确认的条目生�
 
 ## 待补信息和格式说明
 
-1. **Nature Communications 超声机器人论文**：简历未写年份、DOI 或发表状态。目前保留在 `contents/publications.md` 的 `MANUSCRIPTS — DETAILS TO CONFIRM` 分组中，标记为 `HIDDEN`，主页和公开 CV 不展示。明确状态后，可移入期刊论文或在审稿件分组，并填写年份／链接。`HIDDEN` 仅控制页面展示，源文件本身仍会随公开仓库上传。
+1. **Nature Communications 超声机器人论文**：2026-11-17 根据出版商页面核对，在线发表日期为 2026-10-24，DOI 为 `10.1038/s41467-026-79007-5`。已从隐藏条目移到期刊论文首位，并同步 News、公开 CV 和 BibTeX。完整 11 位作者、共同第一作者（Zihan Li、Yixiao Xu）及通讯作者（Hongen Liao、Guochen Ning）均按官网记录。官网当前提供可引用的在线早期版本，尚未列出卷页信息，因此未补写卷号或文章编号。
 2. **GCM-Net**：简历标注 MICCAI Poster，但未注明年份。保留原有归类和 Poster 标记，年份留空，未推定年份或添加正式出版信息。
 3. **同名缩写**：已核对的主要期刊论文区分 Zihan Li 与 Ziyu Li。未能消歧的多处 `Li Z` 保留简历原缩写，不同时加粗。`name_aliases` 仅包含 `Zihan Li`，不要添加 `Li Z`，否则可能错误高亮合作者。
 4. **共一／通讯标记**：保留简历提供的 `#`、`*` 标记。First / co-first author 筛选依据明确的 Zihan Li 姓名和共一标记生成。

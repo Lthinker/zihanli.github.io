@@ -2,6 +2,8 @@
 
 #### JOURNAL ARTICLES  <!--SHOW-->
 
+- A lightweight portable ultrasound robot for autonomous liver sonography ||| Zihan Li#, Yixiao Xu#, Lei Zhang, Taiyu Han, Xinshan Yang, Yingni Wang, Mingxuan Liu, Shenghai Xin, Linxun Liu, Hongen Liao*, Guochen Ning* ||| Nature Communications ||| 2026 ||| Published online ||| [Paper](https://doi.org/10.1038/s41467-026-79007-5) ||| bib_li2026liverrobot
+
 - Improving the accessibility of deep learning-based denoising for accelerated brain MRI using self-supervised learning and/or transfer learning ||| Zihan Li#, Ziyu Li#, Mingxuan Liu#, Wei-Ching Lo, Fenglin Jia, Yitong Luo, Hong-Hsi Lee, Berkin Bilgic, Jonathan R. Polimeni, Haibo Qu*, Qiyuan Tian*, Susie Y. Huang ||| NeuroImage ||| 2026 |||  ||| [Paper](https://doi.org/10.1016/j.neuroimage.2026.122210) ||| bib_1
 - MicroKAN: Mapping Human Brain Microstructure Using Diffusion MRI and Adaptive Nonlinear Modeling ||| Yifei Chen#, Zihan Li#, Yuanhan Wang, Yijin Li, Jialan Zheng, Hongjia Yang, Mingxuan Liu, Tolga Cukur, Qiuyun Fan, Ziyu Li*, Jie Lu*, Qiyuan Tian* ||| NeuroImage ||| 2026 |||  ||| [Paper](https://doi.org/10.1016/j.neuroimage.2026.122032) [Code](https://github.com/JustlfC03/MicroKAN) ||| bib_2
 - Noise2Average: an iterative residual learning strategy for image denoising without clean data ||| Zihan Li, Ziyu Li, Berkin Bilgic, Kui Ying, David H. Salat, Jonathan R. Polimeni, Hongen Liao, Susie Y. Huang, Qiyuan Tian* ||| Imaging Neuroscience ||| 2026 |||  ||| [Paper](https://doi.org/10.1162/IMAG.a.1163) ||| bib_3
@@ -46,11 +48,15 @@
 - FetalAgents: A Multi-Agent System for Fetal Ultrasound Image and Video Analysis ||| Hu X#, Huang J#, Liu M#, Anmahapong K, Chen Y, Luo Y, Huang Y, Bai X, Zihan Li, Liao Y, Qu H, Tian Q* ||| MICCAI |||  ||| Under Review |||  ||| 
 - FetMRIE: Unsupervised Fetal Brain MRI Image Enhancement with Anatomical Fidelity via Adaptive State-Matching Denoising Diffusion ||| Hao Y#, Luo Y#, Liu M#, Yang H, Zhu J, Hu X, Anmahapong K, Zihan Li, Li Y, Chen Y, Liu J, Ning G, Liao Y, Qu H, Tian Q* ||| MICCAI |||  ||| Under Review |||  ||| 
 
-#### MANUSCRIPTS — DETAILS TO CONFIRM  <!--HIDDEN-->
-
-- A lightweight portable ultrasound robot for autonomous liver sonography ||| Zihan Li#, Xu Y#, Zhang L, Han T, Yang X, Wang Y, Liu M, Xin S, Liu L, Liao H*, Ning G* ||| Nature Communications |||  ||| Publication details to confirm |||  ||| 
-
-<div style="display:none" id="bib-store"><div id="bib_1">@article{1,
+<div style="display:none" id="bib-store"><div id="bib_li2026liverrobot">@article{li2026liverrobot,
+  title = {A lightweight portable ultrasound robot for autonomous liver sonography},
+  author = {Li, Zihan and Xu, Yixiao and Zhang, Lei and Han, Taiyu and Yang, Xinshan and Wang, Yingni and Liu, Mingxuan and Xin, Shenghai and Liu, Linxun and Liao, Hongen and Ning, Guochen},
+  journal = {Nature Communications},
+  year = {2026},
+  month = oct,
+  doi = {10.1038/s41467-026-79007-5},
+  url = {https://doi.org/10.1038/s41467-026-79007-5}
+}</div><div id="bib_1">@article{1,
   title = {Improving the accessibility of deep learning-based denoising for accelerated brain MRI using self-supervised learning and/or transfer learning},
   author = {Zihan Li and Ziyu Li and Mingxuan Liu and Wei-Ching Lo and Fenglin Jia and Yitong Luo and Hong-Hsi Lee and Berkin Bilgic and Jonathan R. Polimeni and Haibo Qu and Qiyuan Tian and Susie Y. Huang},
   journal = {NeuroImage},
